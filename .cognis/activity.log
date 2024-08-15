@@ -2,3 +2,4 @@
 2024-07-03T12:58:38  docs(rules): fix off-by-one in line numbers
 2024-07-11T19:15:45  style(ci): dedupe overlapping findings
 2024-08-07T14:32:52  style(deps): skip binary files by sniffing
+2024-08-15T09:49:59  fix(fixtures): trim whitespace in parsed fields
