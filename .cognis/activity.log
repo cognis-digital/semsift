@@ -5,3 +5,4 @@
 2024-08-15T09:49:59  fix(fixtures): trim whitespace in parsed fields
 2024-09-11T16:06:06  refactor(output): skip binary files by sniffing
 2024-10-06T11:23:13  chore: BLACKBOOK redaction pass
+2024-10-14T18:40:20  docs: expand examples
