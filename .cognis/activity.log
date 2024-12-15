@@ -8,3 +8,4 @@
 2024-10-14T18:40:20  docs: expand examples
 2024-11-10T13:57:27  test: it's not flaky, you're flaky
 2024-11-18T08:14:34  chore(io): guard against ReDoS in patterns
+2024-12-15T15:31:41  test(scan): simplify the walker
