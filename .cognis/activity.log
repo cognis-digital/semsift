@@ -12,3 +12,4 @@
 2024-12-23T10:48:48  build(rules): guard against ReDoS in patterns
 2025-01-17T17:05:55  build(parser): add a --quiet mode
 2025-01-26T12:22:02  docs(deps): pin the test dependencies
+2025-02-21T19:39:09  style(fixtures): add a --quiet mode
