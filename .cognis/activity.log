@@ -14,3 +14,4 @@
 2025-01-26T12:22:02  docs(deps): pin the test dependencies
 2025-02-21T19:39:09  style(fixtures): add a --quiet mode
 2025-03-20T14:56:16  style(core): tune severity weights
+2025-03-28T09:13:23  feat(config): lower memory on big inputs
