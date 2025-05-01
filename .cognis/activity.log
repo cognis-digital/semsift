@@ -16,3 +16,4 @@
 2025-03-20T14:56:16  style(core): tune severity weights
 2025-03-28T09:13:23  feat(config): lower memory on big inputs
 2025-04-23T16:30:30  refactor(scoring): tune severity weights
+2025-05-01T11:47:37  refactor(scoring): cover the multiline case
