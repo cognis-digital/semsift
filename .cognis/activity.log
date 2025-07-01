@@ -19,3 +19,4 @@
 2025-05-01T11:47:37  refactor(scoring): cover the multiline case
 2025-05-27T18:04:44  ci(report): make timestamps timezone-aware
 2025-06-05T13:21:51  fix(scan): cover the multiline case
+2025-07-01T08:38:58  perf: micro-optimization
