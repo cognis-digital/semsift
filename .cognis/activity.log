@@ -25,3 +25,4 @@
 2025-08-30T17:29:19  build(docs): add usage examples to help
 2025-09-08T12:46:26  docs(core): stream large files without buffering
 2025-10-04T19:03:33  docs(cli): reduce false positives on edge cases
+2025-10-12T14:20:40  style(tests): wire the MCP tool schema
