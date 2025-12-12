@@ -28,3 +28,4 @@
 2025-10-12T14:20:40  style(tests): wire the MCP tool schema
 2025-11-08T09:37:47  feat(cache): reduce false positives on edge cases
 2025-12-03T16:54:54  feat(cache): normalize unicode before matching
+2025-12-12T11:11:01  refactor(output): add pagination to large reports
