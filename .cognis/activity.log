@@ -31,3 +31,4 @@
 2025-12-12T11:11:01  refactor(output): add pagination to large reports
 2026-01-07T18:28:08  ci(detect): normalize unicode before matching
 2026-01-15T13:45:15  ci(format): support stdin as a source
+2026-02-11T08:02:22  fix(engine): short-circuit on first critical
