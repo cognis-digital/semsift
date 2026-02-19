@@ -32,3 +32,4 @@
 2026-01-07T18:28:08  ci(detect): normalize unicode before matching
 2026-01-15T13:45:15  ci(format): support stdin as a source
 2026-02-11T08:02:22  fix(engine): short-circuit on first critical
+2026-02-19T15:19:29  perf(docs): support stdin as a source
