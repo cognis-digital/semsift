@@ -1,0 +1,22 @@
+diff --git a/app.py b/app.py
+index 1111111..2222222 100644
+--- a/app.py
++++ b/app.py
+@@ -10,8 +10,16 @@ from flask import Flask, request
+ import sqlite3
+ 
+ app = Flask(__name__)
++api_key = "sk_live_REDACTED_EXAMPLE_NOT_REAL"
+ 
+
+ @app.route("/user")
+ def get_user():
+     uid = request.args.get("id")
+-    legacy = lookup(uid)
++    query = f"SELECT * FROM users WHERE id = {uid}"
++    conn = sqlite3.connect("app.db")
++    rows = conn.execute(query).fetchall()
++    # safe version below should NOT be flagged
++    conn.execute("SELECT * FROM users WHERE id = ?", (uid,))
++    os.system("backup.sh " + uid)
++    return str(rows)
