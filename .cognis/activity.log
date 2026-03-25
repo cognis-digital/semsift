@@ -34,3 +34,4 @@
 2026-02-11T08:02:22  fix(engine): short-circuit on first critical
 2026-02-19T15:19:29  perf(docs): support stdin as a source
 2026-03-17T10:36:36  test: add edge case
+2026-03-25T17:53:43  docs: standing on the shoulders of giants (garak, sigma, trufflehog)
