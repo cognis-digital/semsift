@@ -37,3 +37,4 @@
 2026-03-25T17:53:43  docs: standing on the shoulders of giants (garak, sigma, trufflehog)
 2026-04-20T12:10:50  refactor: I have altered the code. pray I don't alter it further
 2026-05-17T19:27:57  docs(ci): respect .gitignore when walking
+2026-05-25T14:44:04  test(fixtures): handle CRLF line endings
