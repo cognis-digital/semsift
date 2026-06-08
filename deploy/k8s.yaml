@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: semsift, labels: { app: semsift } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: semsift } }
+  template:
+    metadata: { labels: { app: semsift } }
+    spec:
+      containers:
+        - name: semsift
+          image: ghcr.io/cognis-digital/semsift:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: semsift }
+spec:
+  selector: { app: semsift }
+  ports: [{ port: 80, targetPort: 8000 }]
