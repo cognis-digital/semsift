@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/semsift",
+  "version": "0.2.0",
+  "description": "JavaScript port of semsift (Cognis Neural Suite)",
+  "bin": {
+    "semsift": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
