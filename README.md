@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-semsift
+pip install "git+https://github.com/cognis-digital/semsift.git"
 semsift scan .            # → prioritized findings in seconds
 ```
 
@@ -49,7 +49,7 @@ Semgrep full scans are noisy and slow on big repos; semsift scans only changed c
 ## Quick start
 
 ```bash
-pip install cognis-semsift
+pip install "git+https://github.com/cognis-digital/semsift.git"
 semsift --version
 semsift scan .                       # scan current project
 semsift scan . --format json         # machine-readable
