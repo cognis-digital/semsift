@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/semsift.git"
 semsift scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+semsift is a security scanner for developers that checks only the new code you are adding — not your entire project — so it catches potential security problems in your pull requests without overwhelming you with thousands of existing alerts. When you run it on a code change, it looks for common vulnerabilities like hardcoded passwords, SQL injection risks, and unsafe command execution, then tells you exactly which line is the problem and why. It outputs results as a readable table or as machine-readable JSON, and can automatically fail a CI build if serious issues are found. It is built for software teams who want fast, focused security feedback on every change they ship.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why semsift?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -46,6 +52,42 @@ Semgrep full scans are noisy and slow on big repos; semsift scans only changed c
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`semsift` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/semsift/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/semsift/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/semsift.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/semsift.git"  # uv
+pip install "git+https://github.com/cognis-digital/semsift.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/semsift.git
+cd semsift && pip install .
+```
+
+Then run:
+```sh
+semsift --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
