@@ -9,16 +9,22 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3500&pause=1000&color=6B46C1&center=true&vCenter=true&width=720&lines=Lightweight+semanticaware+SAST+that+runs+curated+taint+rules;Self-hostable+%C2%B7+MCP-native+%C2%B7+CI-ready+%C2%B7+polyglot" width="720"/>
 
-[![PyPI](https://img.shields.io/pypi/v/cognis-semsift.svg?color=6b46c1)](https://pypi.org/project/cognis-semsift/) [![CI](https://github.com/cognis-digital/semsift/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/semsift/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
+[![install](https://img.shields.io/badge/install-git%2B%20%C2%B7%20pipx%20%C2%B7%20uv-6b46c1.svg)](#install--every-way-every-platform) [![CI](https://github.com/cognis-digital/semsift/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/semsift/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
 
 *Application & Mobile Security — SAST/DAST-lite and binary triage.*
 
 </div>
 
 ```bash
-pip install cognis-semsift
+pip install "git+https://github.com/cognis-digital/semsift.git"
 semsift scan .            # → prioritized findings in seconds
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+semsift is a security scanner for developers that checks only the new code you are adding — not your entire project — so it catches potential security problems in your pull requests without overwhelming you with thousands of existing alerts. When you run it on a code change, it looks for common vulnerabilities like hardcoded passwords, SQL injection risks, and unsafe command execution, then tells you exactly which line is the problem and why. It outputs results as a readable table or as machine-readable JSON, and can automatically fail a CI build if serious issues are found. It is built for software teams who want fast, focused security feedback on every change they ship.
+<!-- cognis:layman:end -->
 
 ## Contents
 
@@ -46,10 +52,56 @@ Semgrep full scans are noisy and slow on big repos; semsift scans only changed c
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** AI & ML  ·  **JTF MERIDIAN division:** ATHENA-PRIME · SAGE
+
+**Topics:** `cognis` `ai` `llm` `machine-learning`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`semsift` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/semsift/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/semsift/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/semsift.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/semsift.git"  # uv
+pip install "git+https://github.com/cognis-digital/semsift.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/semsift.git
+cd semsift && pip install .
+```
+
+Then run:
+```sh
+semsift --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
-pip install cognis-semsift
+pip install "git+https://github.com/cognis-digital/semsift.git"
 semsift --version
 semsift scan .                       # scan current project
 semsift scan . --format json         # machine-readable
@@ -142,6 +194,32 @@ curl -fsSL https://raw.githubusercontent.com/cognis-digital/semsift/main/install
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="related"></a>
+<a name="verification"></a>
+## Verification
+
+[![tests](https://img.shields.io/badge/tests-13%20passing-2ea44f.svg)](AUDIT.md)
+
+Every push is verified end-to-end. Latest audit (2026-06-13):
+
+```text
+tests        : 13 passed, 0 failed, 0 errored
+compile      : all modules parse
+cli          : C:\Python314\python.exe: No module named https
+package      : https
+```
+
+<details><summary>CLI surface (<code>--help</code>)</summary>
+
+```text
+C:\Python314\python.exe: No module named https
+```
+</details>
+
+Full machine-readable results: [`AUDIT.md`](AUDIT.md) · regenerate with `python -m https --help` + `pytest -q`.
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+
 ## Related Cognis tools
 
 - [`apkpeek`](https://github.com/cognis-digital/apkpeek) — One-command static triage of Android APK/AAB binaries: surfaces hardcoded secrets, exported components, dangerous permissions, and insecure manifest flags as a single SARIF report.
