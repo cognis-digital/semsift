@@ -34,3 +34,6 @@ semsift = "semsift.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["semsift"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
