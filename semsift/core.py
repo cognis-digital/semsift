@@ -336,7 +336,17 @@ def scan_added_lines(
 def scan_diff_text(
     diff_text: str, rules: Optional[Sequence[Rule]] = None
 ) -> List[Finding]:
-    """Convenience: parse a diff and scan its added lines in one call."""
+    """Convenience: parse a diff and scan its added lines in one call.
+
+    Returns an empty list for empty/whitespace-only input.  Raises
+    ``TypeError`` if *diff_text* is not a string.
+    """
+    if not isinstance(diff_text, str):
+        raise TypeError(
+            f"scan_diff_text expects a str, got {type(diff_text).__name__!r}"
+        )
+    if not diff_text.strip():
+        return []
     return scan_added_lines(parse_unified_diff(diff_text), rules)
 
 

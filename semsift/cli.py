@@ -49,7 +49,10 @@ def _read_diff(source: str, git_base: Optional[str]) -> str:
                 capture_output=True,
                 text=True,
                 check=False,
+                timeout=120,
             )
+        except subprocess.TimeoutExpired:
+            raise RuntimeError("git diff timed out after 120 s")
         except FileNotFoundError:
             raise RuntimeError("git executable not found on PATH")
         if proc.returncode != 0:
@@ -164,7 +167,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             print(f"semsift: error: {exc}", file=sys.stderr)
             return 2
 
-        findings = scan_diff_text(diff_text)
+        try:
+            findings = scan_diff_text(diff_text)
+        except Exception as exc:  # pragma: no cover
+            print(f"semsift: internal error during scan: {exc}", file=sys.stderr)
+            return 2
 
         if args.format == "json":
             payload = {
