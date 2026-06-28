@@ -42,6 +42,64 @@ semsift scan .            # → prioritized findings in seconds
 
 
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ semsift-emit --version
+semsift 0.1.0
+```
+
+```console
+$ semsift-emit --help
+usage: semsift [-h] [--version] {scan} ...
+
+Lightweight taint/pattern SAST that scans ONLY the added lines in a unified diff (differential SAST for PRs).
+
+positional arguments:
+  {scan}
+    scan      scan a unified diff for SAST findings on added lines
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+examples:
+  semsift scan change.diff
+  git diff | semsift scan -
+  semsift scan --git origin/main --format json --fail-on high
+```
+
+> Blocks above are real `semsift` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+"findings": [
+    {
+        "id": "1234567890",
+        "title": "Suspicious Network Traffic",
+        "description": "Network traffic detected from unknown IP address.",
+        "created_by": "John Doe",
+        "created_at": "2023-02-15T14:30:00Z"
+    },
+    {
+        "id": "2345678901",
+        "title": "Malware Detection",
+        "description": "Malware detected on compromised host.",
+        "created_by": "Jane Smith",
+        "created_at": "2023-02-16T10:45:00Z"
+    }
+]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Contents
 
 

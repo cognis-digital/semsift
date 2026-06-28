@@ -1,0 +1,18 @@
+$ semsift-emit --help
+
+usage: semsift [-h] [--version] {scan} ...
+
+Lightweight taint/pattern SAST that scans ONLY the added lines in a unified diff (differential SAST for PRs).
+
+positional arguments:
+  {scan}
+    scan      scan a unified diff for SAST findings on added lines
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+examples:
+  semsift scan change.diff
+  git diff | semsift scan -
+  semsift scan --git origin/main --format json --fail-on high

@@ -1,0 +1,3 @@
+$ semsift-emit --version
+
+semsift 0.1.0
